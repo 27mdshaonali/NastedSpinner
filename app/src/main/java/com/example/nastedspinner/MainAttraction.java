@@ -3,6 +3,7 @@ package com.example.nastedspinner;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +38,12 @@ public class MainAttraction extends AppCompatActivity {
         subjectName.setText(getIntent().getStringExtra(SUBJECT_NAME));
         subjectReview.setText(getIntent().getStringExtra(SUBJECT_REVIEW));
         imageView.setImageResource(getIntent().getIntExtra(SUBJECT_IMAGE, 0));
+
+        imageView.setOnClickListener(v -> {
+
+            Toast.makeText(this, subjectName.getText().toString()+" Image Clicked", Toast.LENGTH_SHORT).show();
+
+        });
 
 
     }
